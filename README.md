@@ -1,6 +1,6 @@
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Start.gif "Start Screen")
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Start.gif "Startup Screen")
 
-The application contains 2 projects:
+The application consists of 2 projects:
 + MyStore - UWP App client
 + MyStore.BL - UWP class library (contains both business logic and data access logic (via EF core))
 
@@ -21,9 +21,11 @@ The application contains 2 projects:
 	- Background Tasks (updating tiles & badges)
 
 ### Views
-- **Main**: Container for all other views. Hosts app header (app title, menu button and shopping cart button) and an extractable side menu. The rest of the view is a placeholder frame for other views.
+- **Main**: Container for all other views. Hosts application's header (app title, menu button and shopping cart button) and an extractable side menu. The rest of the view is a placeholder frame for other views.
 - **Catalog**: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
 - **Shopping Cart**: Lists all shopping cart items in a table view, allowing to manipulate quantities, delete items and commit a checkout (place an order).
+		
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/ShoppingCart.gif "Shopping Cart")
 
 ### DB structure:
 | Table             | Remarks   
