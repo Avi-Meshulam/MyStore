@@ -1,8 +1,8 @@
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Start.gif "Start Screen")
 
 The application contains 2 projects:
-MyStore - UWP App client
-MyStore.BL - UWP class library (contains both business logic and data access logic (via EF core))
++ MyStore - UWP App client
++ MyStore.BL - UWP class library (contains both business logic and data access logic (via EF core))
 
 ### Features/Tools:
 + DB: [SQLite](https://www.sqlite.org/)
@@ -10,11 +10,12 @@ MyStore.BL - UWP class library (contains both business logic and data access log
 + MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
 + [Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/AdaptiveDisplay.gif "Adaptive Display")
-+ Notifications: [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
++ Notifications via [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
 	- Adaptive Tiles
 	- Badge Notifications
 	- Background Tasks (updating tiles & badges)
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/LiveTile.gif "Live Tile")
+		
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/LiveTile.gif "Live Tile")
 
 ### Operations:
 1. Catalog view - Add items to shopping cart
