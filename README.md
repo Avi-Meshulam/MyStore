@@ -9,20 +9,21 @@ The application contains 2 projects:
 + DB Access: [EF Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/)
 + MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
 + [Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/AdaptiveDisplay.gif "Adaptive Display")
+		
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/AdaptiveDisplay.gif "Adaptive Display")
 + Notifications via [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
-	- Adaptive Tiles
-	- Badge Notifications
-	- Background Tasks (updating tiles & badges)
+	- Live Tiles
 		
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/LiveTile.gif "Live Tile")
+	- Badge Notifications
+		
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Badges.gif "Badge Notifications")
+	- Background Tasks (updating tiles & badges)
 
-### Operations:
-1. Catalog view - Add items to shopping cart
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Badges.gif "Add Items")
-
-2. Shopping Cart view - Change quantities, Remove items and Checkout (set an order)
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/ShoppingCart.gif "Shopping Cart")
+### Views
+- **Main**: Container for all other views. Hosts app header (app title, menu button and shopping cart button) and an extractable side menu. The rest of the view is a placeholder frame for other views.
+- **Catalog**: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
+- **Shopping Cart**: Lists all shopping cart items in a table view, allowing to manipulate quantities, delete items and commit a checkout (place an order).
 
 ### DB structure:
 | Table             | Remarks   
@@ -39,10 +40,10 @@ The application contains 2 projects:
 > you are adviced to create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
 > The new table will replace the field CatalogId in Products table.
 
-Each table is associated with a:
-- Model - Reflects the table fields and inherits from Equatable<T> (also implements IEquatable<T> in order to allow explicit implementation).
-- View Model - Inherits from ViewModeBase<T>, which in turn inherits from Prism.Windows.Mvvm.ViewModelBase.
-- Data Repository/Controller - Implements IDataRepository<T>.
+#### Each table is associated with a:
+- **Model** - Reflects the table fields and inherits from Equatable<T> (also implements IEquatable<T> in order to allow explicit implementation).
+- **View Model** - Inherits from ViewModeBase<T>, which in turn inherits from Prism.Windows.Mvvm.ViewModelBase.
+- **Data Repository/Controller** - Implements IDataRepository<T>.
 
 ```C#
 public interface IDataRepository<T>
@@ -56,24 +57,17 @@ public interface IDataRepository<T>
 	int Clear();
 }
 ```
-
-### Views
-- Main: Container for all other views. Contains app header (app title, menu button and shopping cart button) and the extractable side menu. The rest of the view is a placeholder frame for other views.
-- Catalog: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
-- Shopping Cart: Lists all shopping cart items in a table view, and allowing to manipulate quantities, delete items and checkout.
-
 ### Notes
-> In case the application terminates unexpectedly, and in Windows Event Viewer you see an application log error
-> similar to the following - try one of the following solutions to fix that.
+> In case the application terminates unexpectedly, and the following application error apears in in Windows Event Viewer - 
+> try one of the following solutions to fix that.
 
-Error Log:
+Event Viewer:
 > The machine-default permission settings do not grant Local Activation permission for the COM Server application 
 > with CLSID {CLSID} and APPID {APPID} to the user from address LocalHost (Using LRPC) running in the application 
 > container Microsoft.Windows.Cortana_1.8.12.15063_neutral_neutral_cw5n1h2txyewy SID ({SID}). 
 > This security permission can be modified using the Component Services administrative tool.
 
-[Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1):
-Edit Registry and Component Services permissions
+[Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1) - Edit Registry and Component Services permissions:
 1. Open Regedit.
 2. Go to HKEY_Classes_Root\CLSID\*CLSID*.
 	Note: *CLSID* stand for the ID that appears in your event viewer error. In your case, it's {C2F03A33-21F5-47FA-B4BB-156362A2F239}. 
@@ -95,8 +89,7 @@ Edit Registry and Component Services permissions
 16. Click security tab then click Customize in the Launch and Activation permissions section. Click Edit. Click Add. Add Local Service. Then apply.
 17. Tick the Local Activation box.
 
-[Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral):
-Reset DCOM permissions
+[Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral) - Reset DCOM permissions:
 
 > The DCOM ACLs are stored in the registry under the key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole, 
 > in the following binary values:
