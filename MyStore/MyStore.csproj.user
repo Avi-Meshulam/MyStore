@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
+    <Source>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</Source>
+    <SmallTileSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</SmallTileSource>
+    <MediumTileSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</MediumTileSource>
+    <WideTileSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</WideTileSource>
+    <LargeTileSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</LargeTileSource>
+    <AppIconSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</AppIconSource>
+    <SplashScreenSource>G:\Sela\Courses\20. Developing Advanced Universal Windows Apps with C# and XAML\Project\MyStore\MyStore\Assets\MyStore.png</SplashScreenSource>
+  </PropertyGroup>
+</Project>
