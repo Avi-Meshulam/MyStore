@@ -5,24 +5,22 @@ MyStore - UWP App client
 MyStore.BL - UWP class library (contains both business logic and data access logic (via EF core))
 
 ### Features/Tools:
-DB: [SQLite](https://www.sqlite.org/)
-DB Access: [EF Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/)
-MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
-[Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
-Notifications: [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
-- Adaptive Tiles
-- Badge Notifications
-- Background Tasks (updating tiles & badges)
-
++ DB: [SQLite](https://www.sqlite.org/)
++ DB Access: [EF Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/)
++ MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
++ [Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/AdaptiveDisplay.gif "Adaptive Display")
++ Notifications: [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
+	- Adaptive Tiles
+	- Badge Notifications
+	- Background Tasks (updating tiles & badges)
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/LiveTile.gif "Live Tile")
 
 ### Operations:
-1. Add items to shopping cart
+1. Catalog view - Add items to shopping cart
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Badges.gif "Add Items")
 
-2. Change quantities and remove items from shopping cart
-3. Checkout (create an order and clear shopping cart)
+2. Shopping Cart view - Change quantities, Remove items and Checkout (set an order)
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/ShoppingCart.gif "Shopping Cart")
 
 ### DB structure:
@@ -74,6 +72,7 @@ Error Log:
 > This security permission can be modified using the Component Services administrative tool.
 
 [Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1):
+Edit Registry and Component Services permissions
 1. Open Regedit.
 2. Go to HKEY_Classes_Root\CLSID\*CLSID*.
 	Note: *CLSID* stand for the ID that appears in your event viewer error. In your case, it's {C2F03A33-21F5-47FA-B4BB-156362A2F239}. 
@@ -96,12 +95,14 @@ Error Log:
 17. Tick the Local Activation box.
 
 [Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral):
-Please take a try with the steps below, to reset the DCOM permission:
+Reset DCOM permissions
 
-The DCOM ACLs are stored in the registry under the key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole, in the following binary values:
-•	DefaultAccessPermission
-•	DefaultLaunchPermission
-•	MachineAccessRestriction
-•	MachineLaunchRestriction
+> The DCOM ACLs are stored in the registry under the key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole, 
+> in the following binary values:
++ DefaultAccessPermission
++ DefaultLaunchPermission
++ MachineAccessRestriction
++ MachineLaunchRestriction
 
-Please backup the registry first, then delete all those values listed avove, DCOM will load the default settings if there is no values reference.
+> Backup the registry first, then delete all the values listed avove.
+> DCOM will load the default settings if there are no values referenced.
