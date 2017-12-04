@@ -60,7 +60,7 @@ public interface IDataRepository<T>
 }
 ```
 ### Notes
-> In case the application terminates unexpectedly, and the following application error apears in in Windows Event Viewer - 
+> In case the application terminates unexpectedly, and the following error apears in Windows Event Viewer - 
 > try one of the following solutions to fix that.
 
 Event Viewer:
@@ -69,36 +69,6 @@ Event Viewer:
 > container Microsoft.Windows.Cortana_1.8.12.15063_neutral_neutral_cw5n1h2txyewy SID ({SID}). 
 > This security permission can be modified using the Component Services administrative tool.
 
-[Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1) - Edit Registry and Component Services permissions:
-1. Open Regedit.
-2. Go to HKEY_Classes_Root\CLSID\*CLSID*.
-	Note: *CLSID* stand for the ID that appears in your event viewer error. In your case, it's {C2F03A33-21F5-47FA-B4BB-156362A2F239}. 
-3. Right click on it then select permission. 
-4. Click Advance and change the owner to Administrators group. Also click the box that will appear below the owner line.
-5. Apply full control.
-6. Close the tab then go to HKEY_LocalMachine\Software\Classes\AppID\*APPID*.
-	Note: *AppID* is the ID that appears in your event viewer. In your case it's {316CDED5-E4AE-4B15-9113-7055D84DCC97}.
-7. Right click on it then select permission.
-8. Click Advance and change the owner to Administrators group.
-9. Click the box that will appear below the owner line.
-10. Click Apply and grant full control to Administrators group.
-11. Close all tabs and go to Administrative tool.
-12. Open component services as an Administrator.
-13. Click Computer, click my computer, then click DCOM.
-14. Look for the corresponding service that appears on the error viewer.
-	Note: For this step, look for the one that appeared at the right panel of the RegEdit. For example, the AppID Registry (316CDED5-E4AE-4B15-9113-7055D84DCC97) contains the "Immersive Shell" Data with a (Default) as a name. Now look for "Immersive Shell".
-15. Right click on it then click properties.
-16. Click security tab then click Customize in the Launch and Activation permissions section. Click Edit. Click Add. Add Local Service. Then apply.
-17. Tick the Local Activation box.
+[Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1) - Edit Registry and Component Services permissions
 
-[Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral) - Reset DCOM permissions:
-
-> The DCOM ACLs are stored in the registry under the key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole, 
-> in the following binary values:
-+ DefaultAccessPermission
-+ DefaultLaunchPermission
-+ MachineAccessRestriction
-+ MachineLaunchRestriction
-
-> Backup the registry first, then delete all the values listed avove.
-> DCOM will load the default settings if there are no values referenced.
+[Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral) - Reset DCOM permissions
