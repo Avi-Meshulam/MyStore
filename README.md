@@ -31,15 +31,15 @@ The application consists of 2 projects:
 | Table             | Remarks   
 | ----------------- | ------------- 
 | Catalogs          | A Catalog is a group of products that share a common subject
-| Products          | A Product is associated with one a catalog (currently only one catalog per product(1))
+| Products          | A Product is associated with a catalog (currently only one catalog per product(1))
 | Customers         | A customer is based on the current user logged in Windows
 | ShoppingCarts     | A shopping cart is associated with a customer
 | ShoppingCartItems | A shopping cart item is associated with a shopping cart and a product.
 | Orders            | An order is basically a copy of a shopping cart after checkout, and is also associated with a customer.
 | OrderItems        | An order item is a copy of a shopping cart item after checkout, and is associated with an order and a product.
 
-> (1) if you need to be able to associate a product with multiple catalogs, 
-> you are adviced to create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
+> (1) if you need to associate a product with multiple catalogs, it is adviced to
+> create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
 > The new table will replace the field CatalogId in Products table.
 
 #### Each table is associated with a:
@@ -66,7 +66,7 @@ public interface IDataRepository<T>
 Event Viewer:
 > The machine-default permission settings do not grant Local Activation permission for the COM Server application 
 > with CLSID {CLSID} and APPID {APPID} to the user from address LocalHost (Using LRPC) running in the application 
-> container Microsoft.Windows.Cortana_1.8.12.15063_neutral_neutral_cw5n1h2txyewy SID ({SID}). 
+> container Microsoft.Windows.Cortana...
 > This security permission can be modified using the Component Services administrative tool.
 
 [Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1) - Edit Registry and Component Services permissions
