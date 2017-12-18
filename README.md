@@ -1,4 +1,4 @@
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Start.gif "Startup Screen")
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Start.gif "Startup Screen")
 
 The application consists of 2 projects:
 + MyStore - UWP App client
@@ -10,14 +10,14 @@ The application consists of 2 projects:
 + MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
 + [Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/AdaptiveDisplay.gif "Adaptive Display")
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/AdaptiveDisplay.gif "Adaptive Display")
 + Notifications via [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
 	- Live Tiles
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/LiveTile.gif "Live Tile")
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/LiveTile.gif "Live Tile")
 	- Badge Notifications
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/Badges.gif "Badge Notifications")
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Badges.gif "Badge Notifications")
 	- Background Tasks (updating tiles & badges)
 
 ### Views
@@ -25,7 +25,7 @@ The application consists of 2 projects:
 - **Catalog**: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
 - **Shopping Cart**: Lists all shopping cart items in a table view, allowing to manipulate quantities, delete items and commit a checkout (place an order).
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/ShoppingCart.gif "Shopping Cart")
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
 ### DB structure:
 | Table             | Remarks   
