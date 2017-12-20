@@ -1,3 +1,4 @@
+# MyStore
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Start.gif "Startup Screen")
 
 The application consists of 2 projects:
