@@ -28,6 +28,8 @@ The application consists of 2 projects:
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
 ### DB structure:
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
+		
 | Table             | Remarks   
 | ----------------- | ------------- 
 | Catalogs          | A Catalog is a group of products that share a common subject
@@ -61,7 +63,7 @@ public interface IDataRepository<T>
 ```
 ### Notes
 > In case the application terminates unexpectedly, and the following error apears in Windows Event Viewer - 
-> try one of the following solutions to fix that.
+> try the following solution to fix that.
 
 Event Viewer:
 > The machine-default permission settings do not grant Local Activation permission for the COM Server application 
@@ -69,6 +71,4 @@ Event Viewer:
 > container Microsoft.Windows.Cortana...
 > This security permission can be modified using the Component Services administrative tool.
 
-[Solution 1](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1) - Edit Registry and Component Services permissions
-
-[Solution 2](https://social.technet.microsoft.com/Forums/en-US/7742f039-70af-49b5-b37e-9597da743971/event-id-10016-the-applicationspecific-permission-settings-do-not-grant-local-activation?forum=win10itprogeneral) - Reset DCOM permissions
+[Solution](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1): Edit Registry and Component Services permissions
