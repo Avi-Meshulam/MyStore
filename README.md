@@ -5,7 +5,7 @@ The application consists of 2 projects:
 + MyStore - UWP App client
 + MyStore.BL - UWP class library (contains both business logic and data access logic (via EF core))
 
-### Features/Tools:
+## Features/Tools:
 + DB: [SQLite](https://www.sqlite.org/)
 + DB Access: [EF Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/)
 + MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
@@ -21,14 +21,14 @@ The application consists of 2 projects:
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Badges.gif "Badge Notifications")
 	- Background Tasks (updating tiles & badges)
 
-### Views
+## Views
 - **Main**: Container for all other views. Hosts application's header (app title, menu button and shopping cart button) and an extractable side menu. The rest of the view is a placeholder frame for other views.
 - **Catalog**: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
 - **Shopping Cart**: Lists all shopping cart items in a table view, allowing to manipulate quantities, delete items and commit a checkout (place an order).
 		
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
-### DB structure:
+## DB structure:
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
 		
 | Table             | Remarks   
@@ -45,24 +45,24 @@ The application consists of 2 projects:
 > create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
 > The new table will replace the field CatalogId in Products table.
 
-#### Each table is associated with a:
+### Each table is associated with a:
 - **Model** - Reflects the table fields and inherits from Equatable<T> (also implements IEquatable<T> in order to allow explicit implementation).
 - **View Model** - Inherits from ViewModeBase<T>, which in turn inherits from Prism.Windows.Mvvm.ViewModelBase.
 - **Data Repository/Controller** - Implements IDataRepository<T>.
-
-```C#
-public interface IDataRepository<T>
-{
-	List<T> GetAll();
-	List<T> GetByPredicate(Func<T, bool> predicate);
-	T GetById(uint id);
-	T Add(T obj);
-	bool Update(T obj);
-	bool Delete(T obj);
-	int Clear();
-}
-```
-### Notes
+		
+### Models
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Models.png "Models")
+		
+### View Models
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ViewModels.png "View Models")
+		
+### Repositories
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Repositories.png "Repositories")
+		
+### App & Views
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Views.png "App & Views")
+		
+## Notes
 > In case the application terminates unexpectedly, and the following error apears in Windows Event Viewer - 
 > try the following solution to fix that.
 
