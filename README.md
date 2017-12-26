@@ -28,6 +28,9 @@ The application consists of 2 projects:
 		
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
+	#### App & View Objects
+	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Views.png "App & Views")
+		
 ## DB structure
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
 		
@@ -45,7 +48,7 @@ The application consists of 2 projects:
 > create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
 > The new table will replace the field CatalogId in Products table.
 		
-## EF Core DB Context Class
+#### EF Core DB Context Class
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/DBContext.png "DB Context")
 
 ### Each table is associated with a:
@@ -55,16 +58,13 @@ The application consists of 2 projects:
 		
 ### Models
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Models.png "Models")
-		
+
 ### View Models
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ViewModels.png "View Models")
-		
+
 ### Repositories
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Repositories.png "Repositories")
-		
-### App & Views
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Views.png "App & Views")
-		
+
 ## Notes
 > In case the application terminates unexpectedly, and the following error apears in Windows Event Viewer - 
 > try the following solution to fix that.
