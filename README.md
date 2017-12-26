@@ -28,7 +28,7 @@ The application consists of 2 projects:
 		
 	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
-## DB structure:
+## DB structure
 ![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
 		
 | Table             | Remarks   
@@ -44,6 +44,9 @@ The application consists of 2 projects:
 > (1) if you need to associate a product with multiple catalogs, it is adviced to
 > create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
 > The new table will replace the field CatalogId in Products table.
+		
+## EF Core DB Context Class
+![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/DBContext.png "DB Context")
 
 ### Each table is associated with a:
 - **Model** - Reflects the table fields and inherits from Equatable<T> (also implements IEquatable<T> in order to allow explicit implementation).
