@@ -1,5 +1,5 @@
 # MyStore
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Start.gif "Startup Screen")
+![Startup Screen](https://github.com/PrisonerM13/MyStore/blob/master/gif/Start.gif "Startup Screen")
 
 The application consists of 2 projects:
 + MyStore - UWP App client
@@ -11,14 +11,14 @@ The application consists of 2 projects:
 + MVVM/IoC: [Prism.Unity](https://www.nuget.org/packages/Prism.Unity/6.3.0)
 + [Adaptive Display](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstatemanager)
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/AdaptiveDisplay.gif "Adaptive Display")
+	![Adaptive Display](https://github.com/PrisonerM13/MyStore/blob/master/gif/AdaptiveDisplay.gif "Adaptive Display")
 + Notifications via [NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/ "Notifications Extensions") library:
 	- Live Tiles
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/LiveTile.gif "Live Tile")
+	![Live Tile](https://github.com/PrisonerM13/MyStore/blob/master/gif/LiveTile.gif "Live Tile")
 	- Badge Notifications
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/Badges.gif "Badge Notifications")
+	![Badge Notifications](https://github.com/PrisonerM13/MyStore/blob/master/gif/Badges.gif "Badge Notifications")
 	- Background Tasks (updating tiles & badges)
 
 ## Views
@@ -26,13 +26,13 @@ The application consists of 2 projects:
 - **Catalog**: Displays a product card (picture, title, price) for each product in catalog, while beneath each card there's a button, allowing to add it to shopping cart.
 - **Shopping Cart**: Lists all shopping cart items in a table view, allowing to manipulate quantities, delete items and commit a checkout (place an order).
 		
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
+	![Shopping Cart](https://github.com/PrisonerM13/MyStore/blob/master/gif/ShoppingCart.gif "Shopping Cart")
 
 	#### App & View Objects
-	![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Views.png "App & Views")
+	![App & Views](https://github.com/PrisonerM13/MyStore/blob/master/images/Views.png "App & Views")
 		
 ## DB structure
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
+![ERD](https://github.com/PrisonerM13/MyStore/blob/master/images/ERD.png "ERD")
 		
 | Table             | Remarks   
 | ----------------- | ------------- 
@@ -49,27 +49,27 @@ The application consists of 2 projects:
 > The new table will replace the field CatalogId in Products table.
 		
 #### EF Core DB Context Class
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/DBContext.png "DB Context")
+![DB Context](https://github.com/PrisonerM13/MyStore/blob/master/images/DBContext.png "DB Context")
 
 ### Each table is associated with a:
-- **Model** - Reflects the table fields and inherits from Equatable<T> (also implements IEquatable<T> in order to allow explicit implementation).
-- **View Model** - Inherits from ViewModeBase<T>, which in turn inherits from Prism.Windows.Mvvm.ViewModelBase.
-- **Data Repository/Controller** - Implements IDataRepository<T>.
+- **Model** - Reflects the table fields and inherits from Equatable&lt;T&gt; (also implements IEquatable&lt;T&gt; in order to allow explicit implementation).
+- **View Model** - Inherits from ViewModeBase&lt;T&gt;, which in turn inherits from Prism.Windows.Mvvm.ViewModelBase.
+- **Data Repository/Controller** - Implements IDataRepository&lt;T&gt;.
 		
 ### Models
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Models.png "Models")
+![Models](https://github.com/PrisonerM13/MyStore/blob/master/images/Models.png "Models")
 
 ### View Models
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/ViewModels.png "View Models")
+![View Models](https://github.com/PrisonerM13/MyStore/blob/master/images/ViewModels.png "View Models")
 
 ### Repositories
-![alt text](https://github.com/PrisonerM13/MyStore/blob/master/images/Repositories.png "Repositories")
+![Repositories](https://github.com/PrisonerM13/MyStore/blob/master/images/Repositories.png "Repositories")
 
 ## Notes
 > In case the application terminates unexpectedly, and the following error apears in Windows Event Viewer - 
 > try the following solution to fix that.
 
-Event Viewer:
+Event Viewer Log Message:
 > The machine-default permission settings do not grant Local Activation permission for the COM Server application 
 > with CLSID {CLSID} and APPID {APPID} to the user from address LocalHost (Using LRPC) running in the application 
 > container Microsoft.Windows.Cortana...
