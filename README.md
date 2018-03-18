@@ -37,12 +37,12 @@ The application consists of 2 projects:
 | Table             | Remarks   
 | ----------------- | ------------- 
 | Catalogs          | A Catalog is a group of products that share a common subject
-| Products          | A Product is associated with a catalog (currently only one catalog per product(1))
+| Products          | A Product is associated with a catalog (currently only one catalog per product(1))
 | Customers         | A customer is based on the current user logged in Windows
 | ShoppingCarts     | A shopping cart is associated with a customer
 | ShoppingCartItems | A shopping cart item is associated with a shopping cart and a product.
 | Orders            | An order is basically a copy of a shopping cart after checkout, and is also associated with a customer.
-| OrderItems        | An order item is a copy of a shopping cart item after checkout, and is associated with an order and a product.
+| OrderItems        | An order item is a copy of a shopping cart item after checkout, and is associated with an order and a product.
 
 > (1) if you need to associate a product with multiple catalogs, it is adviced to
 > create a new table, e.g. CatalogsProducts, which will link between catalogs & products.
@@ -75,4 +75,4 @@ Event Viewer Log Message:
 > container Microsoft.Windows.Cortana...
 > This security permission can be modified using the Component Services administrative tool.
 
-[Solution](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1): Edit Registry and Component Services permissions
+Solution: [Edit Registry and Component Services permissions](https://answers.microsoft.com/en-us/windows/forum/windows8_1-winapps/weather-application/e4630db3-50c2-4cc5-9813-f089494a1145?auth=1)
