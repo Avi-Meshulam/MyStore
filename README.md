@@ -1,5 +1,5 @@
 # MyStore
-### A UWP MVVM shopping App, with Entity Framework Core, Prism.Unity and SQLite. Built with VS 2017.
+### A UWP MVVM shopping App, with Prism.Unity, Entity Framework Core and SQLite. Built with VS 2017.
 ![Startup Screen](https://github.com/PrisonerM13/MyStore/blob/master/gif/Start.gif "Startup Screen")
 
 The application consists of 2 projects:
